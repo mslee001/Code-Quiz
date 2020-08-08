@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coding Test</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="has-background-light">
+    <header>
+        <nav class="columns is-mobile">
+            <div class="column">
+                <!-- Clickable text to view the list of high scores -->
+                <p id="highscores">View High Scores</p>
+            </div>
+            <div class="column has-text-right">
+                <!-- The "Time Left" will be displayed here once the code test begins -->
+                <p id="timer"></p>
+            </div>
+        </nav>
+    </header>
+    <main class="tile is-12 is-ancestor mr-3">
+        <!-- Section for start of the test -->
+        <section class="tile is-12 is-child has-text-centered" id="start">
+            <!-- Stipulations of the test -->
+            <h2>You have 45 seconds to complete this JavaScript coding test. Each wrong answer will reduce your time by 10.</h2>
+                <h2>Press 'Start Test' to begin.</h2>
+                <!-- Button to start the test -->
+            <input class="button is-primary is-outlined" type="submit" value="Start Test">
+            <!-- adds extra space after the start button -->
+            <div class="tile is-12"></div>
+        </section>
+
+        <!-- Section for the questions of the test. Defaults to not display -->
+        <section class="tile is-12 is-child has-text-centered" id="test" style="display: none;">
+            <h2 class="title" id="question"></h2>
+                <div class="tile is-12 buttons is-centered has-text-centered">
+                    <!-- When the user submits an answer, the "checkAnswer" function will be triggered -->
+                    <input class="button is-primary is-outlined" id="A" type="submit"
+                        onclick="checkAnswer('A')">
+                    <input class="button is-primary is-outlined" id="B" type="submit"
+                        onclick="checkAnswer('B')">
+                    <input class="button is-primary is-outlined" id="C" type="submit"
+                        onclick="checkAnswer('C')">
+                    <input class="button is-primary is-outlined" id="D" type="submit"
+                        onclick="checkAnswer('D')">
+                </div>
+                <!-- The answer results will be temporarily displayed here after each answer is submitted -->
+            <footer class="card-footer">
+                <h3 class="card-footer-item" id="answer"></h3>
+            </footer>
+        </section>
+
+        <!-- Section to announce the end of the test and give the user a chance to save their score. Defaults to not display -->
+        <section class="tile is-12" id="complete" style="display:none">
+                <h2 class="title has-text-centered">The test is complete!</h2>
+            <h3 class="has-text-centered" id="finalscore"></h3>
+            <form class="mx-6 pb-4 has-text-centered" id="form">
+                <div class="field">
+                    <div class="control">
+                        <label class="label">Enter Name to Save Score</label>
+                        <input class="input" style="width:50%" type="text" id="name" placeholder="Enter Name">
+                    </div>
+                    <div class="control">
+                        <div id="msg"></div>
+                        <button class="button is-link mt-2" id="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- Section to display all the high scores. Defaults to not display -->
+        <section class="tile is-child is-12 has-text-centered" id="all-scores" style="display:none">
+            <h2 class="title">High Scores!</h2>
+            <!-- list items will be created dynamically with javascript for all the saved high scores -->
+            <ol class="mr-6 ml-6" id="all-saved-scores" type="1"></ol>
+            <!-- Button to go back to start the test again -->
+            <input class="button is-primary is-outlined" id="back" type="submit" value="Go Back">
+            <!-- Button to clear all the saved scores -->
+            <input class="button is-primary is-outlined" id="clear" type="submit" value="Clear Scores">                
+            <div class="tile is-12"></div>
+        </section>
+    </main>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
