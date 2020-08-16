@@ -1,7 +1,7 @@
 # bootcamp-week4-hw
 Code Quiz
 
-<p>Link to deployed app: https://mslee001.github.io/bootcamp-week4-hw/ </p>
+<p>Link to deployed app: https://mslee001.github.io/code-quiz/ </p>
 
 <p>This is a javascript coding quiz consisting of five questions. When the user hits the "Start Test" button, the first question is displayed, and a timer for 45 seconds begins. </p>
 
